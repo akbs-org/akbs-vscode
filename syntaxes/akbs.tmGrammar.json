@@ -1,0 +1,81 @@
+{
+    "scopeName": "source.akbs",
+    "patterns": [
+        {
+            "include": "#expression"
+        }
+    ],
+    "repository": {
+        "expression": {
+            "patterns": [
+                {
+                    "include": "#define"
+                },
+                {
+                    "include": "#function"
+                },
+                {
+                    "include": "#wildcard_function"
+                },
+                {
+                    "include": "#comment"
+                },
+                {
+                    "include": "#variable"
+                },
+                {
+                    "include": "#paren-expression"
+                }
+                
+            ]
+        },
+        "define": {
+            "match": "(%define).*",
+            "captures": {
+                "1": {
+                    "name": "keyword.define"
+                },
+                "0": {
+                    "name": "variable.other"
+                }
+            }
+        },
+        "function": {
+            "match": "set|compile|if|print|exit|endif|check_for",
+            "name": "keyword.function"
+        },
+        "wildcard_function": {
+            "match": "[a-z]+\\$",
+            "name": "keyword.wildcard_function"
+        },
+        "comment": {
+            "match": ";.*",
+            "name": "comment.line"
+        },
+        "variable": {
+            "match": "\\$[A-Z]+",
+            "name": "variable.other"
+        },
+        "paren-expression": {
+            "begin": "\\(",
+            "end": "\\)",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.paren.open"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.paren.close"
+                }
+            },
+            "name": "expression.group",
+            "contentName": "expression.inner",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        }
+    }
+}

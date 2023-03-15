@@ -1,0 +1,29 @@
+{
+    "autoClosingPairs": [
+        [
+            "(",
+            ")"
+        ]
+    ],
+    "surroundingPairs": [
+        [
+            "(",
+            ")"
+        ]
+    ],
+    "colorizedBracketPairs": [
+        [
+            "(",
+            ")"
+        ]
+    ],
+    "comments": {
+        "lineComment": ";"
+    },
+    "brackets": [
+        [
+            "(",
+            ")"
+        ]
+    ]
+}

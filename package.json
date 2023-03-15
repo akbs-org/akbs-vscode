@@ -1,0 +1,119 @@
+{
+  "name": "akbs",
+  "displayName": "AKBS",
+  "description": "A syntax-highlighter for the All-Knowing Build System",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "icon": "assets/logo.png",
+  "publisher": "AaravMalani",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaravmalani/akbs-vscode"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aaravmalani/akbs-vscode/issues",
+    "email": "aarav.malani@gmail.com"
+  },
+  "author": {
+    "email": "aarav.malani@gmail.com",
+    "name": "Aarav Malani",
+    "url": "https://github.com/AaravMalani"
+  },
+  "readme": "README.md",
+  "keywords": [
+    "akbs",
+    "build",
+    "system",
+    "syntax",
+    "highlighter",
+    "language",
+    "extension",
+    "vscode"
+  ],
+  
+
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configurationDefaults": {
+      "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "scope": "keyword.wildcard_function",
+            "settings": {
+              "foreground": "#4EC9B0"
+            }
+          },
+          {
+            "scope": "variable.other",
+            "settings": {
+              "foreground": "#CE9178"
+            }
+          },
+          {
+            "scope": "expression.inner",
+            "settings": {
+              "foreground": "#9CDCFE"
+            }
+          },
+          {
+            "scope": "keyword.define",
+            "settings": {
+              "foreground": "#B267E6"
+            }
+          }
+        ]
+      }
+    },
+    "languages": [
+      {
+        "id": "akbs",
+        "extensions": [
+          ".akbs"
+        ],
+        "aliases": [
+          "AKBS"
+        ],
+        "icon": {
+          "light": "./assets/logo.png",
+          "dark": "./assets/logo.png"
+        },
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "akbs",
+        "scopeName": "source.akbs",
+        "path": "./syntaxes/akbs.tmGrammar.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.76.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "@vscode/test-electron": "^2.2.3"
+  }
+}
