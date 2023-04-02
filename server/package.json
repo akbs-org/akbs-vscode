@@ -1,0 +1,19 @@
+{
+	"name": "akbs-server",
+	"description": "AKBS Language Server",
+	"version": "1.1.0",
+	"author": "Aarav Malani",
+	"license": "MIT",
+	"engines": {
+		"node": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/akbs-org/akbs-vscode"
+	},
+	"dependencies": {
+		"vscode-languageserver": "^8.1.0",
+		"vscode-languageserver-textdocument": "^1.0.8"
+	},
+	"scripts": {}
+}

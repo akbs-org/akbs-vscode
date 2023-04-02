@@ -12,10 +12,10 @@
                     "include": "#define"
                 },
                 {
-                    "include": "#function"
+                    "include": "#wildcard_function"
                 },
                 {
-                    "include": "#wildcard_function"
+                    "include": "#function"
                 },
                 {
                     "include": "#comment"
@@ -53,7 +53,7 @@
             "name": "comment.line"
         },
         "variable": {
-            "match": "\\$[A-Z]+",
+            "match": "\\$[A-Z_]+",
             "name": "variable.other"
         },
         "paren-expression": {
